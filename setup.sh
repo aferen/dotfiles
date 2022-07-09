@@ -62,7 +62,7 @@ then
 fi
 
 echo "[i] Run Playbook"
-ansible-playbook ../playbook.yml --verbose --ask-become-pass
+ansible-playbook ./playbook.yml --verbose --ask-become-pass
 
 echo "[i] From now on you can use $ dotfiles to manage your dotfiles"
 echo "[i] Done."

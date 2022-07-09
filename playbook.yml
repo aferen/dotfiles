@@ -2,11 +2,9 @@
 - name: Playbook to manage aferen dotfiles
   hosts: localhost
   connection: local
+  vars_files:
+    - ./variable.yml
   tasks:
-    - name: load custom vars
-      include_vars: ../vars.yml
-      tags:
-        - always
     
     - name: Make sure dotfiles are present
       git:
@@ -18,7 +16,7 @@
         repo: https://github.com/robbyrussell/oh-my-zsh.git
         dest: ~/.local/share/oh-my-zsh
         update: yes
-      when: {{oh-my-zsh}}
+      when: "{{ oh-my-zsh }}"
 
     - name: Create folder
       file:
