@@ -13,7 +13,7 @@
         repo: https://github.com/robbyrussell/oh-my-zsh.git
         dest: ~/.local/share/oh-my-zsh
         update: yes
-      when: "{{ application.oh-my-zsh }}"
+      when: "{{ application.oh_my_zsh }}"
 
     - name: Create folder
       file:

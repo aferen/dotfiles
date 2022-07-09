@@ -1,6 +1,6 @@
 ---
   application:
-    oh-my-zsh: true
+    oh_my_zsh: true
     golang: true
     pycharm: true
     chrome: true
