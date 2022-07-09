@@ -2,9 +2,12 @@
 - name: Playbook to manage aferen dotfiles
   hosts: localhost
   connection: local
-  vars_files:
-    - ./variable.yml
   tasks:
+    - name: load custom vars
+      include_vars: ../vars.yml
+      tags:
+        - always
+
     - name: Install oh-my-zsh
       git:
         repo: https://github.com/robbyrussell/oh-my-zsh.git
