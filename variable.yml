@@ -1,0 +1,7 @@
+---
+vars:
+  packages:
+    golang: true
+    pycharm: true
+    chrome: true
+  

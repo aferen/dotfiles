@@ -1,0 +1,40 @@
+---
+- name: Playbook to manage aferen dotfiles
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Make sure dotfiles are present
+      git:
+        repo: https://github.com/aferen/dotfiles.git
+        dest: ~/.dotfiles
+
+    - name: Install oh-my-zsh
+      git:
+        repo: https://github.com/robbyrussell/oh-my-zsh.git
+        dest: ~/.local/share/oh-my-zsh
+        update: yes
+
+    - name: Create folder
+      file:
+        path: "{{item}}"
+        state: directory
+      loop:
+        - "~/.config/terminator/"
+        - "~/.config/vscode/"
+        - "~/.local/share/zsh/"
+        - "~/workspace/"
+
+    # - include: tasks/link_files.yml
+    #   tags:
+    #     - links
+
+    - include: packages.yml
+      tags:
+        - packages
+
+    # - name: Install oh-my-fish themes and plugins
+    #   command: fish -c "omf install"
+    #   args:
+    #     creates: ~/.local/share/omf/themes/default/
+    #   tags:
+    #     - packages

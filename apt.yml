@@ -1,0 +1,8 @@
+  ---
+apt:
+  # CLI
+  htop:
+
+  # GUI
+  terminator:
+  chromium-browser:
