@@ -1,7 +1,9 @@
 ---
 vars:
-  packages:
+  application:
     golang: true
     pycharm: true
     chrome: true
+    vscode: true
   
+  package:

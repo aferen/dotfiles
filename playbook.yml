@@ -3,6 +3,11 @@
   hosts: localhost
   connection: local
   tasks:
+    - name: load custom vars
+      include_vars: ../vars.yml
+      tags:
+        - always
+    
     - name: Make sure dotfiles are present
       git:
         repo: https://github.com/aferen/dotfiles.git
@@ -13,6 +18,7 @@
         repo: https://github.com/robbyrussell/oh-my-zsh.git
         dest: ~/.local/share/oh-my-zsh
         update: yes
+      when: {{oh-my-zsh}}
 
     - name: Create folder
       file:
@@ -24,13 +30,13 @@
         - "~/.local/share/zsh/"
         - "~/workspace/"
 
-    # - include: tasks/link_files.yml
-    #   tags:
-    #     - links
-
     - include: packages.yml
       tags:
         - packages
+
+    # - include: tasks/link_files.yml
+    #   tags:
+    #     - links
 
     # - name: Install oh-my-fish themes and plugins
     #   command: fish -c "omf install"
