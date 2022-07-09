@@ -1,6 +1,6 @@
 ---
-vars:
   application:
+    oh-my-zsh: true
     golang: true
     pycharm: true
     chrome: true
