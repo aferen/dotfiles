@@ -5,12 +5,6 @@
   vars_files:
     - ./variable.yml
   tasks:
-    
-    - name: Make sure dotfiles are present
-      git:
-        repo: https://github.com/aferen/dotfiles.git
-        dest: ~/.dotfiles
-
     - name: Install oh-my-zsh
       git:
         repo: https://github.com/robbyrussell/oh-my-zsh.git
