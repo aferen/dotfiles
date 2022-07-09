@@ -62,7 +62,8 @@ then
 fi
 
 echo "[i] Run Playbook"
-ansible-playbook ./playbook.yml --verbose --ask-become-pass
+SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+ansible-playbook SCRIPTPATH/playbook.yml --verbose --ask-become-pass
 
 echo "[i] From now on you can use $ dotfiles to manage your dotfiles"
 echo "[i] Done."
