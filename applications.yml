@@ -1,8 +1,7 @@
 ---
-- name: Install Google Chrome
+- vars:
+  apt_file: /etc/apt/sources.list.d/google-chrome.list
 - block: 
-    - vars:
-      apt_file: /etc/apt/sources.list.d/google-chrome.list
     - name: Add Google Chrome key
       shell: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
       when: google_apt_exists.rc == 1 
