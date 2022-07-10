@@ -13,11 +13,11 @@
 
   - name: Docker
     include: "{{os}}/goland.yml"
-    when: "{{applications.goland}}"
+    when: "{{applications.docker}}"
   
   - name: Golang
     include: "{{os}}/golang.yml"
-    when: "{{applications.golang}}"
+    when: "{{applications.golang.install}}"
   
   - name: Goland
     include: "{{os}}/goland.yml"

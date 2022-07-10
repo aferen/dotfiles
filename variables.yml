@@ -2,8 +2,9 @@
 applications:
   chrome: true 
   docker: true
-  golang: true
-    varsion: 1.18.3
+  golang:
+    install: true
+    version: "1.18.3"
   goland: true
   oh_my_zsh: true
   postman: false
