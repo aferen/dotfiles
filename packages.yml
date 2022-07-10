@@ -10,8 +10,8 @@
     apt:
       name: "{{ item.key }}"
       state: "{{ item.value.state | default('latest') }}"
-      when: ansible_os_family == "Darwin"
     with_dict: "{{apt}}"
+    when: ansible_os_family == "Darwin"
   when: ansible_os_family == "Debian"
   become: true
   

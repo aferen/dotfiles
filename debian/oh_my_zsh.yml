@@ -1,6 +1,11 @@
 ---
 - name: oh-my-zsh
+  vars:
+    user: {{ ansible_user_id }}
   block: 
+    - name: change shell
+      command: usermod --shell /usr/bin/zsh {{user}}
+      become: true
     - name: Download oh-my-zsh installation file 
       command: wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
     - name: Install oh-my-zsh 
@@ -11,3 +16,4 @@
       copy: src=./config/zsh_aliases.inc dest="{{ lookup('env','HOME') }}/.local/share/zsh_aliases.inc"
     - name: Copy zshrc_funtions file
       copy: src=./config/.zshrc dest="{{ lookup('env','HOME') }}/.local/share/zsh_functions.inc"
+  become: false

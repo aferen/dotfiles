@@ -1,6 +1,5 @@
 ---
 apt:
-  # CLI
   htop:
   vim:
   apt-transport-https:
@@ -8,4 +7,3 @@ apt:
   lsb-release:
   gnupg:
   zsh:
-  # GUI
