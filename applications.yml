@@ -3,6 +3,9 @@
   vars:
     os: "{{ansible_os_family|lower}}"
   block:
+  - name: git
+    include: git.yml
+
   - name: oh-my-zsh
     include: "{{os}}/oh_my_zsh.yml"
     when: "{{ applications.oh_my_zsh }}"
@@ -34,3 +37,9 @@
   - name: VS-Code
     include: "{{os}}/vscode.yml"
     when: "{{applications.vscode}}"
+
+  - name: terminator
+    include: "{{os}}/oh_my_zsh.yml"
+    when: "{{os}} == Debian and {{ applications.terminator }}"
+
+  become: true

@@ -10,8 +10,9 @@ applications:
   postman: false
   spotify: false
   vscode: true
+  terminator: true
 
 git:
-  name: name
-  email: email
+  name: <name>
+  email: <email>
   

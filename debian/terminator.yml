@@ -1,0 +1,7 @@
+---
+- name: Install Terminator
+  block: 
+    - name: Install Goland with Snap
+      command: snap install goland --classic
+    - name: Copy Terminator Config File
+      copy: content=./config.terminator.cfg dest=~/.config/terminator/config
