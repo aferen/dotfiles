@@ -12,7 +12,7 @@
       state: "{{ item.value.state | default('latest') }}"
     with_dict: "{{apt}}"
   when: ansible_os_family == "Debian"
-
+  become: true
 # TODO: fix
 - name: Install Brew package for Darwin 
   block:
@@ -28,3 +28,4 @@
       state: "{{ item.value.state | default('latest') }}"
     with_dict: "{{apt}}"
   when: ansible_os_family == "Darwin"
+  become: true
