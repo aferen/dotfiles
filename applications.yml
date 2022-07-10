@@ -2,6 +2,6 @@
 - name: Install Applications for Debian 
   block:
   - name: Install Google Chrome
-    include: {{ansible_os_family}}/chrome.yml
-    when: "{{ application.chrome }}"
+    include: "{{ansible_os_family|lower}}/chrome.yml"
+    when: "{{application.chrome}}"
       
