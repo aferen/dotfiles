@@ -3,5 +3,9 @@ apt:
   # CLI
   htop:
   vim:
+  apt-transport-https:
+  ca-certificates:
+  lsb-release:
+  gnupg:
   # GUI
   terminator:

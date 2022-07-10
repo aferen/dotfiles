@@ -5,21 +5,32 @@
   block:
   - name: oh-my-zsh
     include: "{{os}}/oh_my_zsh.yml"
-    when: "{{ application.oh_my_zsh }}"
+    when: "{{ applications.oh_my_zsh }}"
 
   - name: Google Chrome
     include: "{{os}}/chrome.yml"
-    when: "{{application.chrome}}"
+    when: "{{applications.chrome}}"
 
   - name: Docker
     include: "{{os}}/goland.yml"
-    when: "{{application.goland}}"
+    when: "{{applications.goland}}"
   
   - name: Golang
     include: "{{os}}/golang.yml"
-    when: "{{application.golang}}"
+    when: "{{applications.golang}}"
   
   - name: Goland
     include: "{{os}}/goland.yml"
-    when: "{{application.goland}}"
-       
+    when: "{{applications.goland}}"
+    
+  - name: Postman
+    include: "{{os}}/postman.yml"
+    when: "{{applications.postman}}"
+  
+  - name: Spotify
+    include: "{{os}}/spotify.yml"
+    when: "{{applications.spotify}}"
+
+  - name: VS-Code
+    include: "{{os}}/vscode.yml"
+    when: "{{applications.vscode}}"

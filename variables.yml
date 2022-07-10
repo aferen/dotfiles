@@ -1,0 +1,16 @@
+---
+applications:
+  chrome: true 
+  docker: true
+  golang: true
+    varsion: 1.18.3
+  goland: true
+  oh_my_zsh: true
+  postman: false
+  spotify: false
+  vscode: true
+
+git:
+  name: name
+  email: email
+  

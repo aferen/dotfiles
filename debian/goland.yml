@@ -1,0 +1,5 @@
+---
+- name: Install Goland
+  block: 
+    - name: Install Goland with Snap
+      command: snap install goland --classic

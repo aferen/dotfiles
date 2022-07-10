@@ -4,7 +4,7 @@
   connection: local
   tasks:
     - name: load custom vars
-      include_vars: variable.yml
+      include_vars: variables.yml
       tags:
         - always
 
@@ -13,6 +13,7 @@
         path: "{{item}}"
         state: directory
       loop:
+        - "./temp"
         - "~/.config/terminator/"
         - "~/.config/vscode/"
         - "~/.local/share/zsh/"

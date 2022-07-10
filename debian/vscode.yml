@@ -1,0 +1,7 @@
+---
+- name: Install VS Code
+  block: 
+    - name: Download Golang Package
+      command: "wget https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 -P ./temp"
+    - name: Install VS Code
+      command: sudo apt install code_*.deb

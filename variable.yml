@@ -1,8 +1,0 @@
----
-application:
-  chrome: true 
-  docker: true
-  golang: true
-  goland: true
-  oh_my_zsh: true
-  vscode: true
