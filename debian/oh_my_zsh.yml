@@ -1,8 +1,10 @@
 ---
 - name: oh-my-zsh
   block: 
+    - name: Download oh-my-zsh installation file 
+      command: wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
     - name: Install oh-my-zsh 
-      command: sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      command: sh install.sh
     - name: Copy zshrc config file
       copy: src=./config/.zshrc dest="{{ lookup('env','HOME') }}/.zshrc"
     - name: Copy zsh_aliases file

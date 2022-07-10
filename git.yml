@@ -1,39 +1,39 @@
-  ---
-  - name: Git Configuration
-    block:
-      - name: Add a setting to gitconfig
-        community.general.git_config:
-          name: user.name
-          scope: global
-          value: "{{git.name}}"
+---
+- name: Git Configuration
+  block:
+    - name: Add a setting to gitconfig
+      community.general.git_config:
+        name: user.name
+        scope: global
+        value: "{{git.name}}"
 
-        community.general.git_config:
-          name: user.email
-          scope: global
-          value: "{{git.email}}"
+      community.general.git_config:
+        name: user.email
+        scope: global
+        value: "{{git.email}}"
 
-        community.general.git_config:
-          name: core.editor
-          scope: global
-          value: vim
+      community.general.git_config:
+        name: core.editor
+        scope: global
+        value: vim
 
-        community.general.git_config:
-          name: core.excludesfile
-          scope: global
-          value: ~/.gitignore_global
+      community.general.git_config:
+        name: core.excludesfile
+        scope: global
+        value: ~/.gitignore_global
 
-        community.general.git_config:
-          name: url.git\@github\.com\:.pushInsteadOf
-          scope: global
-          value: https://github.com/
-      
-        community.general.git_config:
-          name: hub.protocol
-          scope: global
-          value: https
-      
-      - name: Generate ssh key for Github
-        command : ssh-keygen -q -t rsa -f "{{ lookup('env','HOME') }}/.ssh/github_rsa" -C "" -N ""
-        args:
-          creates: "{{ lookup('env','HOME') }}/.ssh/github_rsa"
-    become: true
+      community.general.git_config:
+        name: url.git\@github\.com\:.pushInsteadOf
+        scope: global
+        value: https://github.com/
+    
+      community.general.git_config:
+        name: hub.protocol
+        scope: global
+        value: https
+    
+    - name: Generate ssh key for Github
+      command : ssh-keygen -q -t rsa -f "{{ lookup('env','HOME') }}/.ssh/github_rsa" -C "" -N ""
+      args:
+        creates: "{{ lookup('env','HOME') }}/.ssh/github_rsa"
+  become: true

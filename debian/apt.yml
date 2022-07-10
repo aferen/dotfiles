@@ -7,4 +7,5 @@ apt:
   ca-certificates:
   lsb-release:
   gnupg:
+  zsh:
   # GUI

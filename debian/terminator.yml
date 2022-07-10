@@ -1,7 +1,9 @@
 ---
-- name: Install Terminator
+- name: Terminator
   block: 
-    - name: Install Goland with Snap
-      command: snap install goland --classic
+    - name: Install Terminator
+      apt:
+        name: terminator
+        state: latest
     - name: Copy Terminator Config File
       copy: src=./config/terminator.cfg dest="{{ lookup('env','HOME') }}/.config/terminator/config"
