@@ -19,4 +19,3 @@
     - name: Install Google Chrome
       apt: pkg=google-chrome-stable state=installed
   become: true
-  when: "{{ application.chrome }}"
