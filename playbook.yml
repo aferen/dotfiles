@@ -29,6 +29,10 @@
       tags:
         - packages
 
+    - include: applications.yml
+      tags:
+        - applications
+
     # - include: tasks/link_files.yml
     #   tags:
     #     - links

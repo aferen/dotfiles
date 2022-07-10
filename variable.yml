@@ -2,8 +2,9 @@
   application:
     oh_my_zsh: true
     golang: true
-    pycharm: true
+    pycharm: false
     chrome: true
     vscode: true
+    postman: true
   
   package:

@@ -16,15 +16,6 @@
       state: "{{ item.value.state | default('latest') }}"
     with_dict: "{{apt}}"
 
-  - name: Manage python packages
-    pip:
-      name: "{{ item.key }}"
-      state: "{{ item.value.state | default('latest') }}"
-      executable: "{{ item.value.executable | default('pip3') }}"
-    with_dict: "{{pip}}"
-    tags:
-      - pip
-
   become: true
   when: ansible_os_family == "Debian"
   tags: apt

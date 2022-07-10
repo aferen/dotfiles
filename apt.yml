@@ -2,7 +2,7 @@
 apt:
   # CLI
   htop:
-
+  vim:
   # GUI
   terminator:
   chromium-browser:
