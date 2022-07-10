@@ -39,7 +39,7 @@
     when: "{{applications.vscode}}"
 
   - name: terminator
-    include: "{{os}}/oh_my_zsh.yml"
-    when: "{{os}} == Debian and {{ applications.terminator }}"
+    include: "{{os}}/terminator.yml"
+    when: os == "debian" and "{{ applications.terminator }}"
 
   become: true

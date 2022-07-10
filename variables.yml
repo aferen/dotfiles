@@ -7,10 +7,11 @@ applications:
     version: "1.18.3"
   goland: true
   oh_my_zsh: true
-  postman: false
-  spotify: false
+  postman: true
+  spotify: true
   vscode: true
-  terminator: true
+  terminator: true # for debian
+  iterm2: true # for darwin
 
 git:
   name: <name>
