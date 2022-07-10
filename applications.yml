@@ -1,15 +1,25 @@
 ---
 - name: Install Applications for Debian 
+  vars:
+    os: "{{ansible_os_family|lower}}"
   block:
-  - name: Install oh-my-zsh
-    git:
-      repo: https://github.com/robbyrussell/oh-my-zsh.git
-      dest: ~/.local/share/oh-my-zsh
-      update: yes
+  - name: oh-my-zsh
+    include: "{{os}}/oh_my_zsh.yml"
     when: "{{ application.oh_my_zsh }}"
 
   - name: Google Chrome
-    include: "{{ansible_os_family|lower}}/chrome.yml"
+    include: "{{os}}/chrome.yml"
     when: "{{application.chrome}}"
+
+  - name: Docker
+    include: "{{os}}/goland.yml"
+    when: "{{application.goland}}"
   
-      
+  - name: Golang
+    include: "{{os}}/golang.yml"
+    when: "{{application.golang}}"
+  
+  - name: Goland
+    include: "{{os}}/goland.yml"
+    when: "{{application.goland}}"
+       

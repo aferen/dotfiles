@@ -18,4 +18,3 @@
       when: google_apt_exists.rc == 1
     - name: Install Google Chrome
       apt: pkg=google-chrome-stable state=latest
-  become: true

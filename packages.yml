@@ -11,7 +11,6 @@
       name: "{{ item.key }}"
       state: "{{ item.value.state | default('latest') }}"
     with_dict: "{{apt}}"
-  become: true
   when: ansible_os_family == "Debian"
 
 # TODO: fix
@@ -28,5 +27,4 @@
       name: "{{ item.key }}"
       state: "{{ item.value.state | default('latest') }}"
     with_dict: "{{apt}}"
-  become: true
   when: ansible_os_family == "Darwin"

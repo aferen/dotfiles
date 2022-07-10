@@ -2,7 +2,7 @@
 
 
 ###### Installation without cloning repo
-`wget https://raw.githubusercontent.com/aferen/dotfiles/master/install.sh -O -| bash`
+`git clone -b master https://github.com/aferen/dotfiles ~/.local/share/.dotfiles && ~/.local/share/.dotfiles/setup.sh`
 
 ###### Installation
 `./setup.sh`
