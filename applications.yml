@@ -16,7 +16,7 @@
       apt: pkg=google-chrome-stable state=installed
   become: true
   when: "{{ application.chrome }}"
-      
+       
 - name: Install, configure, and start Apache
   block:
     - name: Install httpd and memcached
