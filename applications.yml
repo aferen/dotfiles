@@ -1,18 +1,23 @@
 ---
-- vars:
-  apt_file: /etc/apt/sources.list.d/google-chrome.list
-- block: 
-    - name: Add Google Chrome key
-      shell: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-      when: google_apt_exists.rc == 1 
-    - name: Add Google Chrome repo
-      copy: content="deb http://dl.google.com/linux/chrome/deb/ stable main" dest= owner=root group=root mode=644
-      when: google_apt_exists.rc == 1
-    - name: Update apt cache
-      apt: update_cache=yes
-      when: google_apt_exists.rc == 1
-    - name: Install Google Chrome
-      apt: pkg=google-chrome-stable state=installed
+- name: Install, configure, and start Apache
+  block:
+    - name: Install httpd and memcached
+      ansible.builtin.yum:
+        name:
+        - httpd
+        - memcached
+        state: present
+
+    - name: Apply the foo config template
+      ansible.builtin.template:
+        src: templates/src.j2
+        dest: /etc/foo.conf
+
+    - name: Start service bar and enable it
+      ansible.builtin.service:
+        name: bar
+        state: started
+        enabled: True
+  when: ansible_facts['distribution'] == 'CentOS'
   become: true
-  when: "{{ application.chrome }}"
       
