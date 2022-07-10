@@ -1,10 +1,7 @@
 ---
-- name: Include APT package list
-  include_vars: apt.yml
-  tags:
-    - apt
-
-- block:
+- name: Install APT package for Debian 
+  include_vars: debian/apt.yml
+  block:
   - name: Update/Upgrade apt
     apt:
       update_cache: true
@@ -18,4 +15,21 @@
 
   become: true
   when: ansible_os_family == "Debian"
-  tags: apt
+
+# TODO: update with brew
+- name: Install Brew package for Darwin 
+  include_vars: darwin/apt.yml
+  block:
+  - name: Update/Upgrade apt
+    apt:
+      update_cache: true
+      upgrade: dist
+
+  - name: Manage apt packages
+    apt:
+      name: "{{ item.key }}"
+      state: "{{ item.value.state | default('latest') }}"
+    with_dict: "{{apt}}"
+
+  become: true
+  when: ansible_os_family == "Darwin"

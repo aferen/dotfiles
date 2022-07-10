@@ -32,14 +32,3 @@
     - include: applications.yml
       tags:
         - applications
-
-    # - include: tasks/link_files.yml
-    #   tags:
-    #     - links
-
-    # - name: Install oh-my-fish themes and plugins
-    #   command: fish -c "omf install"
-    #   args:
-    #     creates: ~/.local/share/omf/themes/default/
-    #   tags:
-    #     - packages
