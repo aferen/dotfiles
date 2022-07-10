@@ -3,7 +3,7 @@ application:
   oh_my_zsh: true
   golang: true
   pycharm: false
-  chrome: false
+  chrome: true
   vscode: true
   postman: true
 

@@ -1,7 +1,15 @@
 ---
 - name: Install Applications for Debian 
   block:
-  - name: Install Google Chrome
+  - name: Install oh-my-zsh
+    git:
+      repo: https://github.com/robbyrussell/oh-my-zsh.git
+      dest: ~/.local/share/oh-my-zsh
+      update: yes
+    when: "{{ application.oh_my_zsh }}"
+
+  - name: Google Chrome
     include: "{{ansible_os_family|lower}}/chrome.yml"
     when: "{{application.chrome}}"
+  
       
