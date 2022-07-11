@@ -18,9 +18,9 @@
         name: fzf
         state: latest
     - name: Copy zshrc config file
-      copy: src=./config/.zshrc dest="{{ lookup('env','HOME') }}/.zshrc"
+      copy: src=../config/.zshrc dest="{{ lookup('env','HOME') }}/.zshrc"
     - name: Copy zsh_aliases file
-      copy: src=./config/zsh_aliases.inc dest="{{ lookup('env','HOME') }}/.local/share/zsh/zsh_aliases.inc"
+      copy: src=../config/zsh_aliases.inc dest="{{ lookup('env','HOME') }}/.local/share/zsh/zsh_aliases.inc"
     - name: Copy zshrc_funtions file
-      copy: src=./config/zsh_functions.inc dest="{{ lookup('env','HOME') }}/.local/share/zsh/zsh_functions.inc"
+      copy: src=../config/zsh_functions.inc dest="{{ lookup('env','HOME') }}/.local/share/zsh/zsh_functions.inc"
   become: false

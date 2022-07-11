@@ -21,6 +21,7 @@ apt:
   lsb-release: true
   gnupg: true
   zsh: true
+  curl: true
 
 snap:
   postman: true

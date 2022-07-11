@@ -13,7 +13,7 @@
     when: "{{applications.chrome}}"
 
   - name: Docker
-    include: debian/apps/goland.yml
+    include: debian/apps/docker.yml
     when: "{{applications.docker}}"
   
   - name: Golang
