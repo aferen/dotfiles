@@ -17,7 +17,9 @@
       with_list: "{{folders}}"  
 
     - name: Generate ssh key
-      command : ssh-keygen -q -t rsa -C "" -N ""
+      command : ssh-keygen -q -t rsa -f "{{ lookup('env','HOME') }}/.ssh/id_rsa" -C "" -N ""
+      args:
+        creates: "{{ lookup('env','HOME') }}/.ssh/id_rsa"
 
     - include: "{{os}}/packages.yml"
       tags:
