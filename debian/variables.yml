@@ -24,7 +24,7 @@ apt:
   curl: true
 
 snap:
-  postman: true
+  postman: false
   spotify: true
   goland: true
 
