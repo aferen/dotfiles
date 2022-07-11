@@ -5,8 +5,4 @@
       command: "wget https://go.dev/dl/go{{applications.golang.version}}.linux-amd64.tar.gz -P ./temp"
     - name: Extract golang archive
       command: tar -C /usr/local -xzf ./temp/go{{applications.golang.version}}.linux-amd64.tar.gz
-    - name: Update .profile for adding go to the PATH environment variable
-      lineinfile:
-        dest: "{{ lookup('env','HOME') }}/.profile"
-        line: 'export PATH="$PATH:/usr/local/go/bin"'
   
