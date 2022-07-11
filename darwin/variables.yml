@@ -1,0 +1,26 @@
+---
+git:
+  name: <name>
+  email: <email>
+
+brew:
+  htop: true
+  vim: true
+  apt-transport-https: true
+  ca-certificates: true
+  lsb-release: true
+  gnupg: true
+  zsh: true
+  curl: true
+  postman: true
+  spotify: true
+  goland: true
+  iterm2: true
+
+folders:
+  - "./temp"
+  - "~/.config/vscode/"
+  - "~/.local/share/zsh/"
+  - "~/workspace/"
+
+  
