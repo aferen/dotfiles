@@ -1,0 +1,24 @@
+---
+- name: Include APT package list
+  block:
+  - name: Update/Upgrade apt
+    apt:
+      update_cache: true
+      upgrade: dist
+  - name: Manage apt packages
+    apt:
+      name: "{{ item.key }}"
+      state: "{{ item.value.state | default('latest') }}"
+    with_dict: "{{apt}}"
+    when: "{{item.value}}"
+  become: true
+
+- name: Include Snap package list
+  block:
+  - name: Install applications with Snap
+    snap:
+      name: "{{ item.key }}"
+      classic: yes
+    with_dict: "{{snap}}"
+    when: "{{item.value}}"
+  become: true

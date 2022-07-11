@@ -1,5 +1,0 @@
----
-- name: Install Spotify
-  block: 
-    - name: Install Spotify with Snap
-      command: snap install spotify

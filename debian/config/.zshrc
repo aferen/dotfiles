@@ -31,7 +31,7 @@ ZSH_THEME="geoffgarside"
 #DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-zstyle ':omz:update' frequency 14
+export UPDATE_ZSH_DAYS=14
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -115,15 +115,15 @@ PROMPT='%{$fg[green]%}%c%{$reset_color%}$(git_prompt_info) %{$fg[magenta]%}%(!.#
 export PATH="$PATH:$HOME/.local/bin"
 
 # Load custom functions
-if [[ -f "$HOME/.local/share/zsh_functions.inc" ]]; then
-	source "$HOME/.local/share/zsh_functions.inc"
+if [[ -f "$HOME/.local/share/zsh/zsh_functions.inc" ]]; then
+	source "$HOME/.local/share/zsh/zsh_functions.inc"
 else
 	echo >&2 "WARNING: can't load shell functions"
 fi
 
 # Load custom aliases
-if [[ -f "$HOME/.local/share/zsh_aliases.inc" ]]; then
-	source "$HOME/.local/share/zsh_aliases.inc"
+if [[ -f "$HOME/.local/share/zsh/zsh_aliases.inc" ]]; then
+	source "$HOME/.local/share/zsh/zsh_aliases.inc"
 else
 	echo >&2 "WARNING: can't load shell aliases"
 fi

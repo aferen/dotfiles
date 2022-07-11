@@ -1,0 +1,31 @@
+---
+git:
+  name: <name>
+  email: <email>
+
+applications:
+  chrome: true 
+  docker: true
+  golang:
+    install: true
+    version: "1.18.3"
+  oh_my_zsh: true
+  vscode: true
+  terminator: true
+
+apt:
+  htop: true
+  vim: true
+  apt-transport-https: true
+  ca-certificates: true
+  lsb-release: true
+  gnupg: true
+  zsh: true
+
+snap:
+  postman: true
+  spotify: true
+  goland: true
+
+
+  

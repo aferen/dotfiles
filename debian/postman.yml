@@ -1,5 +1,0 @@
----
-- name: Install Postman
-  block: 
-    - name: Install Postman with Snap
-      command: snap install postman

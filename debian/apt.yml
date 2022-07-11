@@ -1,9 +1,0 @@
----
-apt:
-  htop:
-  vim:
-  apt-transport-https:
-  ca-certificates:
-  lsb-release:
-  gnupg:
-  zsh:

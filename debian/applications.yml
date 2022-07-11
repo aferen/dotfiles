@@ -1,0 +1,31 @@
+---
+- name: Install Applications for Debian 
+  block:
+  - name: git
+    include: git.yml
+
+  - name: oh-my-zsh
+    include: debian/apps/oh_my_zsh.yml
+    when: "{{ applications.oh_my_zsh }}"
+
+  - name: Google Chrome
+    include: debian/apps/chrome.yml
+    when: "{{applications.chrome}}"
+
+  - name: Docker
+    include: debian/apps/goland.yml
+    when: "{{applications.docker}}"
+  
+  - name: Golang
+    include: debian/apps/golang.yml
+    when: "{{applications.golang.install}}"
+  
+  - name: VS-Code
+    include: debian/apps/vscode.yml
+    when: "{{applications.vscode}}"
+
+  - name: terminator
+    include: debian/apps/terminator.yml
+    when: "{{ applications.terminator }}"
+
+  become: true

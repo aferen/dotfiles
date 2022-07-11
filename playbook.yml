@@ -2,9 +2,11 @@
 - name: Playbook to manage aferen dotfiles
   hosts: localhost
   connection: local
+  vars:
+    os: "{{ansible_os_family|lower}}"
   tasks:
     - name: load custom vars
-      include_vars: variables.yml
+      include_vars: "{{os}}/variables.yml"
       tags:
         - always
 
@@ -18,10 +20,10 @@
         - "~/.local/share/zsh/"
         - "~/workspace/"
 
-    - include: packages.yml
+    - include: "{{os}}/packages.yml"
       tags:
         - packages
 
-    - include: applications.yml
+    - include: "{{os}}/applications.yml"
       tags:
         - applications
