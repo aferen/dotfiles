@@ -14,7 +14,10 @@
       file:
         path: "{{item}}"
         state: directory
-      with_dict: "{{folders}}"     
+      with_list: "{{folders}}"  
+
+    - name: Generate ssh key
+      command : ssh-keygen -q -t rsa -C "" -N ""
 
     - include: "{{os}}/packages.yml"
       tags:
