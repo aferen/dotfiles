@@ -14,11 +14,7 @@
       file:
         path: "{{item}}"
         state: directory
-      loop:
-        - "./temp"
-        - "~/.config/vscode/"
-        - "~/.local/share/zsh/"
-        - "~/workspace/"
+      with_dict: "{{folders}}"     
 
     - include: "{{os}}/packages.yml"
       tags:

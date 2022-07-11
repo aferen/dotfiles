@@ -28,5 +28,10 @@ snap:
   spotify: true
   goland: true
 
+folders:
+  - "./temp"
+  - "~/.config/vscode/"
+  - "~/.local/share/zsh/"
+  - "~/workspace/"
 
   
