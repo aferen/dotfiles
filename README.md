@@ -2,7 +2,7 @@
 
 
 ###### Installation without cloning repo
-`git clone -b master https://github.com/aferen/dotfiles ~/.local/share/.dotfiles && ~/.local/share/.dotfiles/setup.sh`
+`sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 
 ###### Installation
 `./setup.sh`
