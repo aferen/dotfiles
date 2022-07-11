@@ -8,7 +8,7 @@
       command: wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
     - name: Install oh-my-zsh 
       command: sh install.sh
-    - name: Install oh-my-zsh
+    - name: Install zsh-syntax-highlighting plugin
       git:
         repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
         dest: "{{ lookup('env','HOME') }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
@@ -17,12 +17,10 @@
       apt:
         name: fzf
         state: latest
-    # - name: Change to zsh 
-    #   command: source "{{ lookup('env','HOME') }}/.zshrc"
-    # - name: Copy zshrc config file
-    #   copy: src=./config/.zshrc dest="{{ lookup('env','HOME') }}/.zshrc"
-    # - name: Copy zsh_aliases file
-    #   copy: src=./config/zsh_aliases.inc dest="{{ lookup('env','HOME') }}/.local/share/zsh_aliases.inc"
-    # - name: Copy zshrc_funtions file
-    #   copy: src=./config/.zshrc dest="{{ lookup('env','HOME') }}/.local/share/zsh_functions.inc"
+    - name: Copy zshrc config file
+      copy: src=./config/.zshrc dest="{{ lookup('env','HOME') }}/.zshrc"
+    - name: Copy zsh_aliases file
+      copy: src=./config/zsh_aliases.inc dest="{{ lookup('env','HOME') }}/.local/share/zsh_aliases.inc"
+    - name: Copy zshrc_funtions file
+      copy: src=./config/zsh_functions.inc dest="{{ lookup('env','HOME') }}/.local/share/zsh_functions.inc"
   become: false
