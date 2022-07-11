@@ -3,6 +3,7 @@ git:
   name: <name>
   email: <email>
 
+# TODO: change it to ~/.Brewfile and run 'brew bundle --global'
 brew:
   htop: true
   vim: true
