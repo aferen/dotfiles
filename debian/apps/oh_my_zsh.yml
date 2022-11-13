@@ -17,6 +17,7 @@
       apt:
         name: fzf
         state: latest
+      become: true
     - name: Copy zshrc config file
       copy: src=../../config/.zshrc dest="{{ lookup('env','HOME') }}/.zshrc"
     - name: Copy zsh_aliases file
