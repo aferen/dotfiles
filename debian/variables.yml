@@ -30,6 +30,7 @@ snap:
 
 folders:
   - "./temp"
+  - "~/.config/terminator/"
   - "~/.config/vscode/"
   - "~/.local/share/zsh/"
   - "~/workspace/"
