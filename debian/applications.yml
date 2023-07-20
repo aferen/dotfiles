@@ -16,9 +16,9 @@
     include: debian/apps/docker.yml
     when: "{{applications.docker}}"
   
-  - name: Golang
-    include: debian/apps/golang.yml
-    when: "{{applications.golang.install}}"
+  #- name: Golang
+  #  include: debian/apps/golang.yml
+  #  when: "{{applications.golang.install}}"
   
   - name: VS-Code
     include: debian/apps/vscode.yml
