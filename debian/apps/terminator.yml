@@ -7,3 +7,4 @@
         state: latest
     - name: Copy Terminator Config File
       copy: src=../../config/terminator.cfg dest="{{ lookup('env','HOME') }}/.config/terminator/config"
+      become: false

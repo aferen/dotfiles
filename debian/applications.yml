@@ -4,6 +4,10 @@
   - name: git
     include: git.yml
 
+  - name: kubectl
+    include: debian/apps/kubectl.yml
+    when: "{{ applications.kubectl }}"
+
   - name: oh-my-zsh
     include: debian/apps/oh_my_zsh.yml
     when: "{{ applications.oh_my_zsh }}"

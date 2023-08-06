@@ -6,14 +6,15 @@ git:
 applications:
   chrome: true 
   docker: true
-  golang:
-    install: false
-    version: "1.18.3"
   oh_my_zsh: true
   ultimate_vimrc: true
   vscode: true
   terminator: true
-
+  kubectl: true
+  #golang:
+  #  install: false
+  #  version: "1.18.3"
+  
 apt:
   htop: true
   vim: true

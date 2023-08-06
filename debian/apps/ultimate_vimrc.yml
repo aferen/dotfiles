@@ -1,0 +1,13 @@
+---
+- name: ultimate-vimrc
+  block: 
+    - name: Clone The Ultimate vimrc
+      git:
+        repo: https://github.com/amix/vimrc.git
+        dest: "{{ lookup('env','HOME') }}/.vim_runtime"
+        update: yes
+    - name: Install The Ultimate vimrc
+      command: sh "{{ lookup('env','HOME') }}/.vim_runtime/install_awesome_vimrc.sh"
+    - name: Copy zshrc config file
+      copy: src=../../config/my_configs.vim dest="{{ lookup('env','HOME') }}/.vim_runtime/my_configs.vim"
+  become: false
