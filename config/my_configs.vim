@@ -1,2 +1,2 @@
- packadd! dracula
- colorscheme dracula
+colorscheme pablo
+set number
