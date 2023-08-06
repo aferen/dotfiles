@@ -8,6 +8,10 @@
     include: debian/apps/oh_my_zsh.yml
     when: "{{ applications.oh_my_zsh }}"
 
+  - name: ultimate-vimrc
+    include: debian/apps/ultimate_vimrc.yml
+    when: "{{ applications.ultimate_vimrc }}"
+
   - name: Google Chrome
     include: debian/apps/chrome.yml
     when: "{{applications.chrome}}"
@@ -16,9 +20,9 @@
     include: debian/apps/docker.yml
     when: "{{applications.docker}}"
   
-  #- name: Golang
-  #  include: debian/apps/golang.yml
-  #  when: "{{applications.golang.install}}"
+  - name: Golang
+    include: debian/apps/golang.yml
+    when: "{{applications.golang.install}}"
   
   - name: VS-Code
     include: debian/apps/vscode.yml

@@ -45,3 +45,5 @@ alias mic="while sleep 0.1; do pacmd set-source-volume alsa_input.pci-0000_00_1b
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias clock='tty-clock -s -c -b -C 4 -f %d/%m/%Y'
+alias k=kubectl
+complete -o default -F __start_kubectl k

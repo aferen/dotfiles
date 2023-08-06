@@ -7,9 +7,10 @@ applications:
   chrome: true 
   docker: true
   golang:
-    install: true
+    install: false
     version: "1.18.3"
   oh_my_zsh: true
+  ultimate_vimrc: true
   vscode: true
   terminator: true
 
@@ -26,7 +27,7 @@ apt:
 snap:
   postman: false
   spotify: true
-  goland: true
+  goland: false
 
 folders:
   - "./temp"
