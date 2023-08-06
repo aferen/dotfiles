@@ -71,7 +71,7 @@ export UPDATE_ZSH_DAYS=14
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages fzf zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git colored-man-pages fzf zsh-syntax-highlighting zsh-autosuggestions kubectl)
 
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
