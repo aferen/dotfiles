@@ -1,4 +1,5 @@
 colorscheme pablo
+set foldcolumn=0
 set backspace=2
 set backspace=indent,eol,start
 set ruler
