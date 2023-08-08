@@ -114,6 +114,7 @@ PROMPT='%{$fg[green]%}%c%{$reset_color%}$(git_prompt_info) %{$fg[magenta]%}%(!.#
 ### Custom PATH Variable
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:$HOME/go/bin"
 # Load custom functions
 if [[ -f "$HOME/.local/share/zsh/zsh_functions.inc" ]]; then
 	source "$HOME/.local/share/zsh/zsh_functions.inc"
